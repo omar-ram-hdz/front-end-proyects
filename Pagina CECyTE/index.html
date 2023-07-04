@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/gralStyles.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="shortcut icon" href="assets/FavIcon.ico" type="image/x-icon" />
+    <title>CECyTE 26</title>
+  </head>
+  <body>
+    <header class="head-bar">
+      <p class="title-head">CECyTE 26</p>
+    </header>
+    <input type="checkbox" class="off-canvas-btn" data-js="in" />
+    <label class="off-canvas-burger"></label>
+    <nav class="off-canvas-menu">
+      <div class="off-canvas-menu-container">
+        <a
+          href="#"
+          onclick="{document.querySelector('input[data-js='in']').checked = false;}"
+          target="_self"
+          class="off-canvas-link"
+          >Inicio</a
+        >
+        <a href="knowUs.html" class="off-canvas-link">Acerca de nosotros</a>
+        <a href="educativeOfert.html" class="off-canvas-link"
+          >Oferta educativa</a
+        >
+        <a href="teachersContacts.html" class="off-canvas-link"
+          >Nuestros maestros</a
+        >
+      </div>
+    </nav>
+    <main class="description-cont">
+      <h1>
+        Pagina principal CECyTE 26 plantel Guadalupe Tlachco <br />
+        Clave: 29ETC0026T
+      </h1>
+    </main>
+    <article class="links-index">
+      <div>
+        <p>
+          Correo:
+          <i>
+            <a
+              href="mailto:cecyte26@cecytlax.edu.mx"
+              class="link-effect hover-effect"
+              >cecyte26@cecytlax.edu.mx</a
+            >
+          </i>
+        </p>
+      </div>
+      <div>
+        <p>
+          Telefono:
+          <i>
+            <a href="tel:+52246 158 4312" class="link-effect hover-effect"
+              >246 158 4312</a
+            ></i
+          >
+        </p>
+      </div>
+      <div>
+        <p>
+          Redes sociales:
+          <a
+            href="https://www.facebook.com/cecyte26planteltlachco"
+            target="_blank"
+            class="link-effect hover-effect"
+            ><i>facebook</i></a
+          >
+        </p>
+      </div>
+    </article>
+    <section class="cont">
+      <h2>Envianos un mensaje</h2>
+      <input
+        type="text"
+        id="inMsj"
+        class="in-msj"
+        placeholder="Mensaje a enviar"
+      />
+      <button type="button" id="sendMsj" class="send hover-effect">⇒</button>
+    </section>
+    <section class="cont">
+      <h2>Horario</h2>
+      <figure>
+        <img src="assets/horario-2022-2023.jpg" alt="Horario" class="horario" />
+        <figcaption>Horario 2022-2023</figcaption>
+      </figure>
+      <a
+        href="assets/horario-2022-2023.xls"
+        target="_blank"
+        download="horario-2022-2023"
+        class="link-effect hover-effect"
+        >Descargar horario</a
+      >
+    </section>
+    <section class="cont">
+      <h2>Imagenes del CECyTE</h2>
+      <div class="cont-img">
+        <figure>
+          <img src="assets/CECyTE-Foto.jpg" alt="Imagen CECyTE" />
+          <figcaption>Visualizacion del CECyTE</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/homenaje.jpg" alt="Homenaje CECyTE 26" />
+          <figcaption>Homenaje realizado en el CECyTE 26</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/CECyTE-Night.jpg" alt="CECyTE de noche" />
+          <figcaption>Vista del CECyTE de noche</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/areas-verdes.jpg" alt="Areas verdes" />
+          <figcaption>Ejemplo de las areas verdes del CECyTE</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="card-map cont">
+      <h2>Hubicacion</h2>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1370.0765535198489!2d-98.10935895692897!3d19.33260804360941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cfe0f3a3610b17%3A0xd98eba3e9b93ae67!2sCECyTE%2026%20Tlachco!5e0!3m2!1ses-419!2smx!4v1669856419815!5m2!1ses-419!2smx"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </section>
+    <dialog id="dialogMessage" class="dialog-msg">
+      <strong class="description-modal" id="descriptionModal"></strong>
+      <div class="cont-btn-dialog-close">
+        <button type="button" class="btn-dialog-close" id="closeModal">
+          Cerrar
+        </button>
+      </div>
+    </dialog>
+    <button type="button" class="btn-to-index hide-index" id="btnIndex">
+      ⬆
+    </button>
+    <script src="js/index.js"></script>
+    <script src="js/btn_inicio.js"></script>
+  </body>
+</html>

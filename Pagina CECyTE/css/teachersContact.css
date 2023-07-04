@@ -1,0 +1,38 @@
+body {
+  padding-bottom: 50px;
+}
+.cont-tarj {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 3;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.Tarjet-Personal {
+  overflow: auto;
+  width: 300px;
+  height: auto;
+  padding: 10px;
+  border: var(--color-green) solid 2px;
+  border-radius: 10px;
+  margin: 8px;
+  text-align: center;
+}
+.Tarjet-Personal i {
+  color: var(--color-orange);
+}
+.cont-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.Profile-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+}

@@ -1,0 +1,58 @@
+body,
+html,
+* {
+  scroll-behavior: smooth;
+}
+.marg {
+  margin-bottom: 100px;
+}
+.btn-controlls {
+  margin-top: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-green);
+  padding: 0;
+  border: none;
+  border-radius: 50px;
+  margin-right: 30px;
+}
+.fill-btn {
+  filter: invert(70%) sepia(80%) saturate(120%);
+  fill: var(--color-orange);
+}
+
+body {
+  padding-bottom: 80px;
+}
+
+.play {
+  border: #377df7 solid 3px;
+}
+figure {
+  border: 2px var(--color-orange) solid;
+  display: flex;
+  flex-flow: column;
+  padding: 5px;
+  max-width: 80%;
+  margin: auto;
+  margin-bottom: 40px;
+  margin-top: 50px;
+}
+
+.desc {
+  height: auto;
+  max-width: 100%;
+}
+
+figcaption {
+  background-color: var(--color-orange);
+  color: #fff;
+  font: italic smaller sans-serif;
+  padding: 3px;
+  text-align: center;
+}
+.facebook-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

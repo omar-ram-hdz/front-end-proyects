@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/FavIcon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/gralStyles.css" />
+    <link rel="stylesheet" href="css/educativeOfert.css" />
+    <title>CECyTE 26 | Oferta educativa</title>
+  </head>
+  <body>
+    <header class="head-bar">
+      <p class="title-head">CECyTE 26</p>
+    </header>
+    <img src="/assets/" alt="" />
+    <input type="checkbox" class="off-canvas-btn" data-js="in" />
+    <label class="off-canvas-burger"></label>
+    <nav class="off-canvas-menu">
+      <div class="off-canvas-menu-container">
+        <a href="index.html" target="_self" class="off-canvas-link">Inicio</a>
+        <a
+          href="knowUs.html"
+          class="off-canvas-link"
+          onclick="{document.querySelector('input[data-js='in']').checked = false;}"
+          >Acerca de nosotros</a
+        >
+        <a href="educativeOfert.html" class="off-canvas-link"
+          >Oferta educativa</a
+        >
+        <a href="teachersContacts.html" class="off-canvas-link"
+          >Nuestros maestros</a
+        >
+      </div>
+    </nav>
+    <main class="description-cont">
+      <h1>Oferta educativa</h1>
+    </main>
+    <section class="links-index marg">
+      <a href="#programacion" class="link-effect hover-effect">Programacion</a>
+      <a href="#produccion" class="link-effect hover-effect"
+        >Produccion Industrial</a
+      >
+    </section>
+    <section class="cont" id="programacion">
+      <h2>Programacion</h2>
+      <p>
+        La carrera de Tecnico en programacion es donde el estudiante aprenderá
+        el arte de la programacion, el proceso de crear un conjunto de
+        instrucciones que le dicen a una computadora como realizar algun tipo de
+        tarea mediante el uso de un lenguaje de programacion. Pero no solo la
+        accion de escribir codigo para que la computadora o el software lo
+        ejecute.
+      </p>
+      <div class="cont-img">
+        <figure>
+          <img
+            src="assets/Tabla-Programacion.jpg"
+            alt="Tabla de contenidos"
+            class="hg-auto"
+          />
+          <figcaption>Tabla de contenidos</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="assets/Mapa-competencias-profecionales-Programacion.jpg"
+            alt="Mapa competencias programacion"
+            class="hg-auto"
+          />
+          <figcaption>Mapa de competencias profecionales</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="assets/Alumno-Programacion.jpg"
+            alt="Alumno de programacion"
+            class="hg-auto"
+          />
+          <figcaption>Alumno de programacion</figcaption>
+        </figure>
+      </div>
+      <a
+        href="assets/Programacion.pdf"
+        target="_blank"
+        download="Programa de estudios Programacion"
+        class="link-effect hover-effect"
+        >Descargar programa de estudios</a
+      >
+    </section>
+    <section class="cont" id="produccion">
+      <h2>Produccion Industrial</h2>
+      <p>
+        La carrera de Técnico en producción industrial ofrece las competencias
+        profesionales que permiten al estudiante realizar actividades dirigidas
+        a , verificar la seguridad e higiene en el ámbito laboral, auxiliar en
+        la mejora de los procesos productivos, controlar inventarios de
+        producción, Inspeccionar la calidad en la producción y elaborar
+        proyectos de producción.
+      </p>
+      <div class="cont-img">
+        <figure>
+          <img
+            src="assets/Tabla-Produccion-Industrial.jpg"
+            alt="Tabla de contenidos"
+            class="hg-auto"
+          />
+          <figcaption>Tabla de contenidos</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="assets/Mapa-competencias-profecionales-Produccion.jpg .jpg"
+            alt="Competencias"
+            class="hg-auto"
+          />
+          <figcaption>Mapa de competencias profesionales</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="assets/Huerto-produccion-2.jpg"
+            alt="Huerto"
+            class="hg-auto"
+          />
+          <figcaption>Huerto por alumnos de Produccion industrial</figcaption>
+        </figure>
+      </div>
+      <a
+        href="assets/Produccion industrial.pdf"
+        target="_blank"
+        download="Programa de estudios Produccion Industrial"
+        class="link-effect hover-effect"
+        >Descargar programa de estudios</a
+      >
+    </section>
+    <button type="button" class="btn-to-index hide-index" id="btnIndex">
+      ⬆
+    </button>
+    <script src="js/btn_inicio.js"></script>
+  </body>
+</html>

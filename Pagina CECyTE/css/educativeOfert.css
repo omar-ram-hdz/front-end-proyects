@@ -1,0 +1,33 @@
+body {
+  padding-bottom: 30px;
+}
+figure {
+  border: 2px var(--color-orange) solid;
+  display: flex;
+  flex-flow: column;
+  padding: 5px;
+  max-width: 80%;
+  margin: auto;
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+img {
+  height: 300px;
+  max-width: 100%;
+}
+
+figcaption {
+  background-color: var(--color-orange);
+  color: #fff;
+  font: italic smaller sans-serif;
+  padding: 3px;
+  text-align: center;
+}
+.hg-auto {
+  height: auto;
+}
+.cont-img {
+  display: flex;
+  flex-wrap: wrap;
+}
