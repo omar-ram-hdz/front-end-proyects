@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DHH | Programacion en HTML</title>
+    <style>
+      *,
+      :root,
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      html {
+        font-size: 16px;
+        box-sizing: content-box;
+      }
+      *,
+      :root,
+      body {
+        box-sizing: inherit;
+        background-color: inherit;
+      }
+      body {
+        background-color: #343434;
+      }
+      body > * {
+        background-color: transparent;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+        color: #62a7ec;
+        margin-bottom: 2ch;
+      }
+      body {
+        background-image: url("./pattern.png");
+      }
+      p,
+      li,
+      label {
+        color: #c3cad5;
+      }
+      .main-head {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+        margin-top: 50px;
+      }
+      .desc-head {
+        max-width: 50%;
+        margin-bottom: 10px;
+      }
+      main {
+        padding-left: 5ch;
+        padding-right: 5ch;
+        display: grid;
+        grid-template-areas: "cont aside";
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: auto;
+      }
+
+      main > div {
+        grid-area: cont;
+      }
+      main > aside {
+        grid-area: aside;
+      }
+      main > aside > * {
+        margin-left: 5ch;
+        width: auto;
+        padding-top: 10px;
+        max-width: 100%;
+      }
+      .head-one-title {
+        font-size: 2.5em;
+        text-align: center;
+      }
+      details {
+        padding: 25px;
+        background-color: #222222;
+        color: white;
+        margin-bottom: 15px;
+        border: none;
+        border-radius: 7px;
+        border-right: solid 8px #222222;
+        max-width: 56vw;
+        font-family: Consolas;
+        font-size: 1.3em;
+        transition: all 0.5s ease-out;
+        transition: border 0.3s ease-in-out;
+      }
+
+      details:hover {
+        border-right-color: aqua;
+      }
+      .ae-ol {
+        margin-left: 5ch;
+      }
+      .sumary {
+        font-size: 1.8em;
+        height: 4em !important;
+        margin: 0 !important;
+      }
+      @media screen and (max-width: 900px) {
+        main {
+          grid-template-areas: "cont" "aside";
+          grid-template-columns: auto;
+          grid-template-rows: 1fr 1fr;
+        }
+        main > aside {
+          max-width: 56vw;
+        }
+        main > aside > * {
+          margin-left: 0;
+        }
+      }
+      .cont {
+        width: 98%;
+        border-radius: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5px;
+        margin-top: 5px;
+        background-color: white;
+        color: #222222 !important;
+        padding: 5px;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+      .cont > p,
+      .cont > label,
+      .cont > li {
+        color: #222222;
+      }
+      .b-s {
+        color: aqua;
+      }
+      .img-propagand {
+        max-width: 80%;
+        border-radius: 20px;
+      }
+      .fig-propagand {
+        background-color: #222222;
+        padding: 20px;
+        z-index: 10;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="main-head">
+      <div class="desc-head">
+        <h2 class="head-one-title">Curso de programacion en HTML</h2>
+        <p>
+          Aprende sobre el lenguaje de proposito especifico HTML y adentrate en
+          el mundo de la web... con un poquito de ¡CSS!
+        </p>
+        <br />
+        <h4>Aprendizaje esperado:</h4>
+        <ul class="ae-ol">
+          <li>Creacion de documentos HTML</li>
+          <li>Maquetado en HTML</li>
+          <li>Validacion de formularios sin JS</li>
+          <li>Aplicar estilos basicos con CSS</li>
+          <li>Conocimiento basico del desarrollo web</li>
+        </ul>
+        <h4>Maestro:</h4>
+        <p>
+          <b>Omar Ramirez Hernandez</b> alumno del CECyTE 26 Plantel Tlachco, un
+          apasionado de la programacion y la tecnologia.
+        </p>
+      </div>
+      <img src="https://picsum.photos/id/5/500/300" alt="Programacion" />
+    </header>
+    <main>
+      <div>
+        <h3 class="sumary">Temario del curso:</h3>
+        <details>
+          <summary><span class="b-s">Bloque 1</span> => Introduccion</summary>
+          <div class="cont">
+            <p>Bienvenida</p>
+            <p>¿Que es HTML?</p>
+            <p>Historia de la web</p>
+            <p>Estructura de un documento</p>
+            <p>Tipos de paginas web</p>
+            <p>UI, UX</p>
+            <p>¿Que debo tener en cuenta para desarrollar una pagina?</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="b-s">Bloque 2</span> => IDE</summary>
+          <div class="cont">
+            <p>Instalacion de Visual Studio Code</p>
+            <p>Configuracion de Visual Studio Code</p>
+            <p>Extensiones en Visual Studio Code</p>
+            <p>Estructura de un proyecto</p>
+          </div>
+        </details>
+        <details>
+          <summary>
+            <span class="b-s">Bloque 3</span> => Sintaxis basica y etiquetas de
+            texto
+          </summary>
+          <div class="cont">
+            <p>Sintaxis de una etiqueta</p>
+            <p>HTML, head, body</p>
+            <p>Titulos</p>
+            <p>Texto</p>
+            <p>Mas etiquetas de texto</p>
+          </div>
+        </details>
+        <details>
+          <summary>
+            <span class="b-s">Bloque 4</span> => Contenedores y HTML semantico
+          </summary>
+          <div class="cont">
+            <p>Contenedores en linea</p>
+            <p>Contenedores en bloque</p>
+            <p>¿Que es la semantica?</p>
+            <p>¿Por que la buena Maquetacion?</p>
+            <p>HTML semantico</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="b-s">Bloque 5</span> => Hipervinculos</summary>
+          <div class="cont">
+            <p>Que es un hipervinculo y sus tipos</p>
+            <p>Etiqueta a</p>
+            <p>Descargar documentos</p>
+            <p>Archivos externos (CSS/JS)</p>
+          </div>
+        </details>
+        <details>
+          <summary>
+            <span class="b-s">Bloque 6</span> => Elementos multimedia
+          </summary>
+          <div class="cont">
+            <p>Imagenes</p>
+            <p>Videos</p>
+            <p>Audios</p>
+            <p>Videos de youtube</p>
+            <p>Mapa de google maps</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="b-s">Bloque 7</span> => Tablas</summary>
+          <div class="cont">
+            <p>Etiqueta table</p>
+            <p>thead,tbody,tfooter</p>
+            <p>th, td, tr</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="b-s">Bloque 8</span> => Formularios</summary>
+          <div class="cont">
+            <p>Metodos</p>
+            <p>Cabeceras</p>
+            <p>Etiqueta input y sus tipos</p>
+            <p>HTTP vs HTTPS</p>
+            <p>Submit</p>
+            <p>Enviar un correo atravez de un formulario</p>
+          </div>
+        </details>
+        <details>
+          <summary>
+            <span class="b-s">Bloque 9</span> => Responsive Design
+          </summary>
+          <div class="cont">
+            <p>¿Que es el "Responsive Design"?</p>
+            <p>Buenas practicas del Responsive Design</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="b-s">Bloque 10</span> => Emmet</summary>
+          <div class="cont">
+            <p>¿Que es EMMET?</p>
+            <p>Etiquetas, atributos, contenido, hijos, incrementales</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="b-s">Bloque 11</span> => Etiqueta meta</summary>
+          <div class="cont">
+            <p>¿Por que es importante?</p>
+            <p>Atributos de meta</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="b-s">Bloque 12</span> => CSS basico</summary>
+          <div class="cont">
+            <p>¿Que es CSS?</p>
+            <p>Sintaxis basica</p>
+            <p>Algoritmo de CSS</p>
+            <p>Formas de añadir CSS al HTML</p>
+            <p>Selectores en CSS</p>
+            <p>Width y Height</p>
+            <p>Colores</p>
+            <p>Valores de medida</p>
+            <p>Content Box</p>
+            <p>Fuentes</p>
+            <p>Pseudoclases</p>
+          </div>
+        </details>
+        <details>
+          <summary>
+            <span class="b-s">Bloque 13</span> => Validaciones con HTML y CSS
+          </summary>
+          <div class="cont">
+            <p>¿Porque las validaciones?</p>
+            <p>Expresiones regulares</p>
+            <p>Pattern, required, title</p>
+            <p>Pseudoclase :valid y :invalid en CSS</p>
+          </div>
+        </details>
+        <details>
+          <summary>
+            <span class="b-s">Bloque 14</span> => Un poco mas de el desarrollo
+          </summary>
+          <div class="cont">
+            <p>¿Que es JavaScript?</p>
+            <p>¿Que es un servidor?</p>
+            <p>¿Que es una base de datos?</p>
+            <p>¿Que es un sitio web?</p>
+            <p>¿Que necesito para programar un sitio web?</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="b-s">Bloque final</span> => Evaluacion</summary>
+          <div class="cont">
+            <a href="https://docs.google.com/forms/u/0/" target="_blank"
+              >Ir al formulario (google form)</a
+            >
+          </div>
+        </details>
+      </div>
+      <aside>
+        <h2 class="sumary">Proximos cursos...</h2>
+        <figure class="fig-propagand">
+          <img
+            src="https://th.bing.com/th/id/R.73d6d3c3f03d32bb0c2ebefb8bf964c5?rik=mayGWRis%2bikYVQ&pid=ImgRaw&r=0"
+            alt="Moto"
+            class="img-propagand"
+          />
+          <figcaption>
+            <h3>Curso de motos</h3>
+            <p>
+              Descripcion del curso... <br />
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat,
+              architecto.
+            </p>
+          </figcaption>
+        </figure>
+        <figure class="fig-propagand">
+          <img
+            src="https://picsum.photos/id/823/500/300"
+            alt="Fotografia"
+            class="img-propagand"
+          />
+          <figcaption>
+            <h3>Curso de fotografia</h3>
+            <p>
+              Descripcion del curso... <br />
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat,
+              architecto.
+            </p>
+          </figcaption>
+        </figure>
+        <figure class="fig-propagand">
+          <img
+            src="https://okdiario.com/img/2019/02/18/como-dibujar-personas.jpg"
+            alt="Dibujp"
+            class="img-propagand"
+          />
+          <figcaption>
+            <h3>Curso de dibujo</h3>
+            <p>
+              Descripcion del curso... <br />
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat,
+              architecto.
+            </p>
+          </figcaption>
+        </figure>
+      </aside>
+    </main>
+    <footer></footer>
+  </body>
+</html>
