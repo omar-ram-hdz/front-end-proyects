@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Inteligente</title>
+  </head>
+  <body>
+    <section
+      style="
+        height: 80vh;
+        width: 100%;
+        background-color: #222222;
+        color: #f7df1e;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+      "
+    >
+      <p>Seccion 1</p>
+    </section>
+    <section
+      style="
+        height: 80vh;
+        width: 100%;
+        background-color: #222222;
+        color: #f7df1e;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+      "
+    >
+      <p>Seccion 2</p>
+    </section>
+    <video
+      src="../Assets/playHard.mp4"
+      controls
+      width="40%"
+      height="auto"
+      data-video-smart
+      loop
+    ></video>
+    <section
+      style="
+        height: 80vh;
+        width: 100%;
+        background-color: #222222;
+        color: #f7df1e;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+      "
+    >
+      <p>Seccion 1</p>
+    </section>
+    <section
+      style="
+        height: 80vh;
+        width: 100%;
+        background-color: #222222;
+        color: #f7df1e;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+      "
+    >
+      <p>Seccion 2</p>
+    </section>
+    <video
+      src="../Assets/catDancing.mp4"
+      controls
+      width="40%"
+      height="auto"
+      data-video-smart
+      loop
+    ></video>
+    <section
+      style="
+        height: 80vh;
+        width: 100%;
+        background-color: #222222;
+        color: #f7df1e;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+      "
+    >
+      <p>Seccion 1</p>
+    </section>
+    <section
+      style="
+        height: 80vh;
+        width: 100%;
+        background-color: #222222;
+        color: #f7df1e;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+      "
+    >
+      <p>Seccion 2</p>
+    </section>
+    <script>
+      const d = document,
+        w = window;
+      function smartVideo() {
+        const $videos = d.querySelectorAll("video[data-video-smart]");
+        const cb = (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target
+                .play()
+                .then((val) => console.log(val))
+                .catch((err) => console.log(err));
+            } else {
+              entry.target.pause();
+            }
+            w.addEventListener("visibilitychange", () =>
+              d.visibilityState === "visible"
+                ? (() => {
+                    if (entry.isIntersecting) {
+                      entry.target.play();
+                    }
+                  })()
+                : entry.target.pause()
+            );
+          });
+        };
+        const observer = new IntersectionObserver(cb, { threshold: 0.1 });
+        $videos.forEach((el) => observer.observe(el));
+      }
+      smartVideo();
+      //title descripcion 
+      //pattern expresiones regulares HTML
+    </script>
+  </body>
+</html>

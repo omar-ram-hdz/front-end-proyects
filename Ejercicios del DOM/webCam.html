@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+      }
+      video {
+        height: 80%;
+        object-fit: cover;
+      }
+    </style>
+    <title>Web Cam</title>
+  </head>
+  <body>
+    <video id="webCam"></video>
+    <script>
+      const d = document,
+        n = navigator,
+        w = window;
+      function webCam(id) {
+        const $video = document.getElementById(id);
+        if (n.mediaDevices.getUserMedia) {
+          n.mediaDevices
+            .getUserMedia({ video: true, audio: false })
+            .then((stream) => {
+              console.log(stream);
+              $video.srcObject = stream;
+              $video.play();
+            })
+            .catch((err) => {
+              $video.insertAdjacentHTML("afterend", "<p>Permiso denegado</p>");
+              console.error(err);
+            });
+        }
+      }
+      webCam("webCam");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorteo</title>
+  </head>
+  <body>
+    <ul class="players">
+      <li class="player">JavaScript</li>
+      <li class="player">Java</li>
+      <li class="player">C</li>
+      <li class="player">Python</li>
+      <li class="player">Ruby</li>
+      <li class="player">Go</li>
+      <li class="player">Rust</li>
+      <li class="player">TypeScript</li>
+      <li class="player">C++</li>
+      <li class="player">C#</li>
+    </ul>
+    <button type="button" class="btn-get">Obtener ganador</button>
+    <script>
+      const d = document;
+      function draw(btn, selector) {
+        const getWinner = (select) => {
+          const $players = d.querySelectorAll(select),
+            rand = Math.floor(Math.random() * $players.length),
+            winner = $players[rand];
+          return `El ganador es: ${winner.textContent}`;
+        };
+        d.addEventListener("click", (e) => {
+          if (e.target.matches(btn)) {
+            let result = getWinner(selector);
+            alert(result);
+            console.log(result);
+          }
+        });
+      }
+      draw(".btn-get", ".player");
+    </script>
+  </body>
+</html>

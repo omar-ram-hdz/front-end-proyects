@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Open</title>
+  </head>
+  <body>
+    <form action="" id="fr">
+      <input type="text" name="direccion" id="url" />
+      <input type="number" id="width" name="ancho" />
+      <input type="number" id="height" name="alto" />
+      <button type="submit" id="op">Abrir</button>
+      <button type="button" name="cerrar" id="cl">Cerrar</button>
+    </form>
+    <script>
+      function responsiveTester(form) {
+        const d = document;
+        const $form = document.getElementById(form);
+        let tester;
+
+        d.addEventListener("submit", (e) => {
+          if (e.target === $form) {
+            e.preventDefault();
+            tester = window.open(
+              $form.direccion.value,
+              "tester",
+              `innerWidth = ${$form.ancho.value}, innerHeight = ${$form.alto.value}`
+            );
+          }
+        });
+        d.addEventListener("click", (e) => {
+          if (e.target === $form.cerrar) {
+            tester.close();
+          }
+        });
+      }
+      responsiveTester("fr");
+    </script>
+  </body>
+</html>

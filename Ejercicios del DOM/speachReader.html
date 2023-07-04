@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Read</title>
+  </head>
+  <body>
+    <select name="voices" id="speach-voices">
+      <option value="">---Selecciona una voz---</option>
+    </select>
+    <br /><br /><br />
+    <textarea id="speach-text" required cols="30" rows="10"></textarea>
+    <br /><br /><br />
+    <button type="button" id="speach-btn">Leer</button>
+    <script>
+      const d = document,
+        w = window;
+      function speachRead() {
+        const $sepachSelect = d.getElementById("speach-voices"),
+          $speachText = d.getElementById("speach-text"),
+          $speachBtn = d.getElementById("speach-btn"),
+          speachMessage = new SpeechSynthesisUtterance();
+        let voices = [];
+        d.addEventListener("DOMContentLoaded", (e) => {
+          w.speechSynthesis.addEventListener("voiceschanged", (e) => {
+            voices = w.speechSynthesis.getVoices();
+            voices.forEach((voice) => {
+              let option = d.createElement("option");
+              option.value = voice.name;
+              option.textContent = `${voice.name} --- ${voice.lang}`;
+              $sepachSelect.appendChild(option);
+            });
+          });
+        });
+        d.addEventListener("change", (e) => {
+          if (e.target === $sepachSelect) {
+            speachMessage.voice = voices.find(
+              (voice) => voice.name === e.target.value
+            );
+          }
+        });
+        d.addEventListener("click", (e) => {
+          if (e.target === $speachBtn) {
+            speachMessage.text = $speachText.value;
+            w.speechSynthesis.speak(speachMessage);
+          }
+        });
+      }
+      speachRead();
+    </script>
+  </body>
+</html>

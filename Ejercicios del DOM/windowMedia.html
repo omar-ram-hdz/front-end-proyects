@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Match media</title>
+  </head>
+  <body>
+    <div id="video"></div>
+    <div id="map"></div>
+    <script>
+      const query = "(min-width:650px)";
+      function responsiveMedia(id, mq, contentMobile, contentDesktop) {
+        const d = document;
+        const w = window;
+        const breakPoint = w.matchMedia(mq);
+        const resize = (e) => {
+          if (e.matches) {
+            d.getElementById(id).innerHTML = contentDesktop;
+          } else {
+            d.getElementById(id).innerHTML = contentMobile;
+          }
+        };
+        breakPoint.addListener(resize);
+        resize(breakPoint);
+      }
+      responsiveMedia(
+        "video",
+        query,
+        `<a href="https://www.youtube.com/embed/16geDhp5Xmg?list=PLvq-jIkSeTUZ6QgYYO3MwG9EMqC-KoLXA">Ir al video</a>`,
+        `<iframe width="1418" height="577" src="https://www.youtube.com/embed/16geDhp5Xmg?list=PLvq-jIkSeTUZ6QgYYO3MwG9EMqC-KoLXA" title="Curso JavaScript: 89. DOM: Ejercicios Prácticos | API localStorage - #jonmircha" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
+      );
+      responsiveMedia(
+        "map",
+        query,
+        `<a href="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d941.1190487270321!2d-98.17494993042995!3d19.34852299886956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTnCsDIwJzU0LjciTiA5OMKwMTAnMjcuNSJX!5e0!3m2!1ses-419!2smx!4v1684613387584!5m2!1ses-419!2smx">Ir a google maps</a>`,
+        `<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d941.1190487270321!2d-98.17494993042995!3d19.34852299886956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTnCsDIwJzU0LjciTiA5OMKwMTAnMjcuNSJX!5e0!3m2!1ses-419!2smx!4v1684613387584!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
+      );
+      /*
+         <iframe width="1418" height="577" src="https://www.youtube.com/embed/16geDhp5Xmg?list=PLvq-jIkSeTUZ6QgYYO3MwG9EMqC-KoLXA" title="Curso JavaScript: 89. DOM: Ejercicios Prácticos | API localStorage - #jonmircha" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+         <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d941.1190487270321!2d-98.17494993042995!3d19.34852299886956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTnCsDIwJzU0LjciTiA5OMKwMTAnMjcuNSJX!5e0!3m2!1ses-419!2smx!4v1684613387584!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      */
+    </script>
+  </body>
+</html>

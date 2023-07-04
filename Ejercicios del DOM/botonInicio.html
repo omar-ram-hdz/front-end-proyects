@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      *,
+      :root,
+      html {
+        box-sizing: content-box;
+        padding: 0;
+        margin: 0;
+      }
+      html {
+        padding: 0;
+        margin: 0;
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .btn {
+        width: 40px;
+        height: 40px;
+        font-size: 30px;
+        padding: 10px;
+        border: none;
+        border-radius: 55px;
+        background-color: #f7df1e;
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+      }
+      header {
+        position: fixed;
+        background-color: #f7df1e;
+        width: 100%;
+        height: 10vh;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 40px;
+      }
+      button {
+        transition: opacity 1s ease, all 1s ease;
+      }
+      .hide {
+        visibility: hidden;
+        pointer-events: none;
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>Hola</header>
+    <button type="button" class="btn hide" id="btnIndex">⬆</button>
+    <p data-spe="si">
+      content1 <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    </p>
+    <p>content<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
+    <p>content<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
+    <p class="">
+      content1<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    </p>
+    <p>content<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
+    <p>content<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
+    <p>content<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
+    <p>content<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
+    <p>content<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
+    <p>content<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
+    <p>content<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
+    <p>content<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
+    <p>content<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
+    <p>content1<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
+    <p>content<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
+    <p>content<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
+    <p>content<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
+    <p>content<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
+    <p>content<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
+    <p>content<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
+    <p>content<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
+    <p>content<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
+    <p>content<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
+    <p>content<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
+    <p>content<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
+    <p>content<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
+    <p>content<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
+    <p>content<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
+    <p>content<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
+    <p>content<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
+    <script>
+      const $indexBtn = document.getElementById("btnIndex");
+      $indexBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          //left: 0,
+          behavior: "smooth",
+        });
+      });
+      document.addEventListener("scroll", (e) => {
+        if (window.scrollY >= 700) {
+          $indexBtn.classList.remove("hide");
+        } else {
+          $indexBtn.classList.add("hide");
+        }
+      });
+      //opacity es animable display no
+      //usar data- para cambio de thema
+      //querySelectorAll("[-data]")
+      //data- tambien puede ser usado como boolean
+      //e.target.matches()
+    </script>
+  </body>
+</html>

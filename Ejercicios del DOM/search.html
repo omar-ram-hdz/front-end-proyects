@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+      .card {
+        background-color: #222222;
+        color: #f7df1e;
+        transition: all 0.5s ease-in-out;
+      }
+      .card img {
+        width: 100%;
+        height: auto;
+      }
+      .card figcaption {
+        padding: 1rem;
+      }
+      .filter {
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        order: 1;
+      }
+    </style>
+    <title>search</title>
+  </head>
+  <body lang="es-MX">
+    <input type="search" class="card-filter" placeholder="Buscar..." />
+    <section class="cards">
+      <figure class="card">
+        <img src="https://placeimg.com/200/200/tech" alt="Tech" />
+        <figcaption>Tech</figcaption>
+      </figure>
+      <figure class="card">
+        <img src="https://placeimg.com/200/200/animals" alt="Animals" />
+        <figcaption>Animals</figcaption>
+      </figure>
+      <figure class="card">
+        <img src="https://placeimg.com/200/200/people" alt="People" />
+        <figcaption>People</figcaption>
+      </figure>
+      <figure class="card">
+        <img src="https://placeimg.com/200/200/arch" alt="Arch" />
+        <figcaption>Arch</figcaption>
+      </figure>
+      <figure class="card">
+        <img src="https://placeimg.com/200/200/tech" alt="Tecnologia" />
+        <figcaption>Tecnologia</figcaption>
+      </figure>
+      <figure class="card">
+        <img src="https://placeimg.com/200/200/animals" alt="Animales" />
+        <figcaption>Animales</figcaption>
+      </figure>
+      <figure class="card">
+        <img src="https://placeimg.com/200/200/nature" alt="Nature" />
+        <figcaption>Nature</figcaption>
+      </figure>
+      <figure class="card">
+        <img src="https://placeimg.com/200/200/any" alt="Any" />
+        <figcaption>Any</figcaption>
+      </figure>
+    </section>
+    <script>
+      const d = document;
+      function searchFilters(input, selector) {
+        d.addEventListener("keyup", (e) => {
+          if (e.target.matches(input)) {
+            if (e.key === "Escape") e.target.value = "";
+            console.log(e.target.value);
+            d.querySelectorAll(selector).forEach((el) =>
+              el.textContent.toLowerCase().includes(e.target.value)
+                ? el.classList.remove("filter")
+                : el.classList.add("filter")
+            );
+          }
+        });
+      }
+      searchFilters(".card-filter", ".card");
+      //card-filter
+      //card
+    </script>
+  </body>
+</html>

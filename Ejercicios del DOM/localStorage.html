@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body lang="es-MX">
+    <!-- 
+         session storage
+         local storage
+       -->
+    <h1>Local Storage</h1>
+    <button type="button" id="cls">clear</button>
+    <script>
+      //
+      const lS = localStorage;
+      document.addEventListener("DOMContentLoaded", () => {
+        if (lS.getItem("theme") === null) {
+          let theme = parseInt(prompt("elije 1 o 2"));
+          if (theme == 1) {
+            lS.setItem("theme", "true"); //llave valor
+          } else {
+            lS.setItem("theme", "false"); //llave valor
+          }
+        } else {
+          alert(lS.getItem("theme"));
+        }
+        //lo mismo para session storage
+      });
+      document.getElementById("cls").addEventListener("click", () => {
+        lS.removeItem("theme");
+      });
+    </script>
+  </body>
+</html>

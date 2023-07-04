@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reloj y alarma digital</title>
+    <style>
+      html {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Reloj digital y alarma sonora</h1>
+    <p id="text-Js"></p>
+    <button id="play-reloj">Iniciar Reloj</button>
+    <button id="stop-reloj">Detener Reloj</button>
+    <button id="play-alarma">Iniciar Alarma</button>
+    <button id="stop-alarma">Detener Alarma</button>
+    <script>
+      function Reloj(elemento) {
+        let aux = new Date();
+        elemento.innerText = `${aux.getHours()}:${aux.getMinutes()}:${aux.getSeconds()}`;
+      }
+      const $playR = document.querySelector("#play-reloj"),
+        $stopR = document.querySelector("#stop-reloj"),
+        $playA = document.querySelector("#play-alarma"),
+        $stopA = document.querySelector("#stop-alarma");
+      var Inter;
+      const aud = new Audio("alarm.mp3");
+      $playR.addEventListener("click", (e) => {
+        Inter = setInterval(() => {
+          Reloj(document.getElementById("text-Js"));
+        }, 1000);
+        $playR.disabled = true;
+      });
+      $stopR.addEventListener("click", () => {
+        $playR.disabled = false;
+        clearInterval(Inter);
+        document.getElementById("text-Js").innerText = "";
+      });
+      $playA.addEventListener("click", () => {
+        aud.play();
+        aud.loop = true;
+        $playA.disabled = true;
+      });
+      $stopA.addEventListener("click", () => {
+        aud.loop = false;
+        aud.pause();
+        $playA.disabled = false;
+      });
+      "strint".slice(-2); //Solo los ultimos 2 se quedan
+      Math.floor(); //Quitar decimales
+    </script>
+  </body>
+</html>

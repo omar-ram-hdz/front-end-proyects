@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .stage {
+        display: flex;
+        min-height: 50vh;
+        background-color: #222222;
+      }
+      .ball {
+        margin: auto;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        background-color: #f7df1e;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Hola</p>
+    <input type="text" />
+    <article class="stage">
+      <div class="ball"></div>
+    </article>
+    <script>
+      const d = document;
+      const $ball = d.querySelector(".ball");
+      const $stage = d.querySelector(".stage");
+      let x = 0,
+        y = 0;
+      d.addEventListener("keydown", (e) => {
+        e.preventDefault();
+        let limits = $ball.getBoundingClientRect();
+        let limitsStage = $stage.getBoundingClientRect();
+        /* console.log(e.type);
+        console.log(e);
+        console.log(e.key);
+        console.log(e.keyCode);
+        console.log(e.ctrlKey); //Si viene junto con ctrl
+        console.log(e.altKey); //Si viene con alt ej alt+1 => true
+        console.log(e.shiftKey); //comn shift
+        console.log(e.metaKey);
+
+        if (e.key === "a" && e.altKey) {
+          alert("Haz lanzado una alerta con el teclado");
+        }
+        if (e.key.toLocaleLowerCase() === "c" && e.ctrlKey) {
+          e.preventDefault();
+        } */
+        //   console.log(limits);
+        //   console.log(limitsStage);
+        console.log(e);
+        if (limits.left > limitsStage.left) x--;
+        if (limits.right < limitsStage.right) x++;
+        if (limits.bottom < limitsStage.bottom) y++;
+        if (limits.top > limitsStage.top) y--;
+        switch (e.keyCode) {
+          case 37: {
+            //izquierda
+            x--;
+            break;
+          }
+          case 38: {
+            //arriba
+            y--;
+            break;
+          }
+          case 39: {
+            //derecha
+            x++;
+            break;
+          }
+          case 40: {
+            //abajo
+            y++;
+            break;
+          }
+        }
+        //
+        $ball.style.transform = `translate(${x * 10}px,${y * 10}px)`;
+      });
+      //keydown momento en que teclea
+      //keyup soltar cuando se suelta
+      //keypress mientras esta presionada
+    </script>
+  </body>
+</html>

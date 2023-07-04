@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      *,
+      body,
+      html,
+      :root {
+        padding: 0;
+        margin: 0;
+        scroll-behavior: smooth;
+      }
+      a,
+      a:hover,
+      a:visited,
+      a:active {
+        text-decoration: none;
+      }
+      header {
+        display: flex;
+        width: 100%;
+        height: 9vh;
+        justify-content: center;
+        align-items: center;
+        background-color: #f7df1e;
+        color: #222222;
+        position: sticky;
+      }
+      section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background-color: #2222;
+        height: 60vh;
+        margin-bottom: 20px;
+      }
+      section p {
+        font-size: 2rem;
+      }
+      nav a {
+        display: block;
+        background-color: #222222;
+        color: #f7df1e;
+        transition: color 0.5s ease, background-color 0.5s ease;
+        height: 10vh;
+      }
+      nav a:hover {
+        color: #222222;
+        background-color: #f7df1e;
+      }
+      .active {
+        color: #222222;
+        background-color: #f7df1e;
+      }
+
+      body {
+        display: grid;
+        grid-template-columns: 80% 20%;
+        grid-template-rows: 4rem auto;
+        grid-template-areas:
+          "header header"
+          "main panel";
+      }
+      main {
+        grid-area: main;
+      }
+      header {
+        grid-area: header;
+        position: sticky;
+        top: 0;
+      }
+      nav {
+        grid-area: panel;
+        height: 100vh;
+        position: sticky;
+        top: 4rem;
+        align-self: start;
+        text-align: right;
+        padding-right: 0.5rem;
+      }
+    </style>
+    <title>Desktop Menu</title>
+  </head>
+  <body>
+    <header>
+      <h1>Hola</h1>
+    </header>
+    <nav>
+      <a href="#seccion1" data-scroll-spy>Seccion 1</a>
+      <a href="#seccion2" data-scroll-spy>Seccion 2</a>
+      <a href="#seccion3" data-scroll-spy>Seccion 3</a>
+      <a href="#seccion4" data-scroll-spy>Seccion 4</a>
+      <a href="#seccion5" data-scroll-spy>Seccion 5</a>
+      <a href="#seccion6" data-scroll-spy>Seccion 6</a>
+      <a href="#seccion7" data-scroll-spy>Seccion 7</a>
+      <a href="#seccion8" data-scroll-spy>Seccion 8</a>
+    </nav>
+    <main>
+      <section id="seccion1" data-scroll-spy>
+        <p>Seccion 1</p>
+      </section>
+      <section id="seccion2" data-scroll-spy>
+        <p>Seccion 2</p>
+      </section>
+      <section id="seccion3" data-scroll-spy>
+        <p>Seccion 3</p>
+      </section>
+      <section id="seccion4" data-scroll-spy>
+        <p>Seccion 4</p>
+      </section>
+      <section id="seccion5" data-scroll-spy>
+        <p>Seccion 5</p>
+      </section>
+      <section id="seccion6" data-scroll-spy>
+        <p>Seccion 6</p>
+      </section>
+      <section id="seccion7" data-scroll-spy>
+        <p>Seccion 7</p>
+      </section>
+      <section id="seccion8" data-scroll-spy>
+        <p>Seccion 8</p>
+      </section>
+    </main>
+    <script>
+      const d = document;
+      function scrollSpy() {
+        const $seccions = d.querySelectorAll("section[data-scroll-spy]");
+        console.log($seccions);
+        const cb = (entries) => {
+          entries.forEach((entry) => {
+            const id = entry.target.getAttribute("id");
+            if (entry.isIntersecting) {
+              d.querySelector(
+                `a[data-scroll-spy][href="#${id}"]`
+              ).classList.add("active");
+            } else {
+              d.querySelector(
+                `a[data-scroll-spy][href="#${id}"]`
+              ).classList.remove("active");
+            }
+          });
+        };
+        const observer = new IntersectionObserver(cb, {
+          //rootMargin: "-300px",
+          threshold: 0.9,
+        });
+        $seccions.forEach((el) => observer.observe(el));
+      }
+      scrollSpy();
+    </script>
+  </body>
+</html>

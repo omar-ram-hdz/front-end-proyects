@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Menu Hamburguesa</title>
+   <style>
+      :root{
+         --deg : 0deg;
+      }
+      html{
+         scroll-behavior: smooth;
+         padding: 0;
+         margin: 0;
+         z-index: 10;
+      }
+      .container{
+         position: fixed;
+         right: 0;
+         bottom: 0;
+         width: 50px;
+         height: 50px;
+         padding: 0;
+         margin: 8px;
+         z-index: 20;
+      }
+      .check{
+         width: 50px;
+         height: 50px;
+         appearance: none;
+         display: block;
+         position: fixed;
+         bottom: 0;
+         margin-bottom: 8px;
+         z-index: 100;
+      }
+      p{
+         transition: color 2s;
+      }
+      .One, .Two, .tree{
+         background-color: red;
+         width: 50px;
+         height: 10px;
+         border-radius: 1rem;
+         margin-bottom: 10px;
+         transition: transform 2s,opacity 0s;
+         z-index: 50;
+         right: 0;
+         bottom: 0;
+      }
+      .check:checked ~ .One{
+         transform: translateY(100%) rotate(45deg);
+      }
+      .check:checked ~ .Two{
+         transform: rotate(-45deg) translateY(-100%) translateX(10%);
+      }
+      .check:checked ~ .tree{
+         opacity: 0;
+      }
+      .check:checked ~ .menu{
+         position: fixed;
+         top: 0;
+         transform: translateY(100%);
+
+      }
+      a{
+         display: block;
+      }
+      section{
+         text-align: center;
+         margin-top: 80vh;
+         margin-bottom: 80vh;
+         font-size: 40px;
+      }
+      .menu{
+         overflow-y: scroll;
+         position: absolute;
+         background-color: black;
+         opacity: .7;
+         width: 100%;
+         height: 100vh;
+         top: 0;
+         left: 0;
+         z-index: 11;
+         overflow-x: hidden;
+         transform: translateX(-100%);
+         transition: transform 2s;
+      }
+      .menu div{
+         width: 100%;
+         height: 30%;
+         border: solid;
+         padding-top: auto;
+         padding-bottom: auto;
+      }
+      .menu div a{
+         opacity: 1;
+         margin-top: auto;
+         margin-bottom: auto;
+      }
+   </style>
+</head>
+<body>
+   <main>
+      <h1 lang="es-MX">JavaScript Menu Hamburguesa</h1>
+   </main>
+   <p></p>
+      <input class="check" type="checkbox">
+      <div class="One" data-description="Menu"></div>
+      <div class="Two" data-description="Menu"></div>
+      <div class="tree" data-description="Menu"></div>
+   <nav class="menu">
+      <div>
+         <a href="#1">Seccion 1</a>
+      </div>
+      <div>
+         <a href="#2">Seccion 2</a>
+      </div>
+      <div>
+         <a href="#3">Seccion 3</a>
+      </div>
+      <div>
+         <a href="#4">Seccion 4</a>
+      </div>
+      <div>
+         <a href="#5">Seccion 5</a>
+      </div>
+   </nav>
+
+   <section id="1">Seccion 1</section>
+   <section id="2">Seccion 2</section>
+   <section id="3">Seccion 3</section>
+   <section id="4">Seccion 4</section>
+   <section id="5">Seccion 5</section>
+   <script>
+      const $main = document.querySelector("main"),
+            $txtH1 = document.querySelector("h1");
+      $main.style.backgroundColor = "#f7DF1E";
+      $txtH1.style.color = "#222";
+      $main.style.textAlign = "center";
+      const $check = document.querySelector(".check");
+      const $sections = document.querySelector(".menu");
+      $check.addEventListener("click",(e)=>{
+      });
+   </script>
+</body>
+</html>

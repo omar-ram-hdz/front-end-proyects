@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detectar dispositivos</title>
+  </head>
+  <body lang="es-MX">
+    <div id="userDevice"></div>
+    <script>
+      const d = document;
+      const n = navigator;
+      const ua = n.userAgent;
+      function userDeviceInfo(id) {
+        const isMobile = {
+            android: () => ua.match(/android/i),
+            ios: () => ua.match(/iphone|ipad|ipod/i),
+            windows: () => ua.match(/windows phone/i),
+            any: function () {
+              return this.android() || this.ios() || this.windows();
+            },
+          },
+          isDesktop = {
+            linux: () => ua.match(/linux/i),
+            mac: () => ua.match(/mac os/i),
+            windows: () => ua.match(/windows nt/i),
+            any: function () {
+              return this.linux() || this.mac() || this.windows();
+            },
+          },
+          $id = document.getElementById(id),
+          isBrowser = {
+            chrome: () => ua.match(/chrome/i),
+            safari: () => ua.match(/safari/i),
+            firefox: () => ua.match(/firefox/i),
+            opera: () => ua.match(/opera|opera mini/i),
+            ie: () => ua.match(/msie|iemobile/i),
+            edge: () => ua.match(/edge/i),
+            any: function () {
+              return (
+                this.chrome() ||
+                this.safari() ||
+                this.firefox() ||
+                this.opera() ||
+                this.ie() ||
+                this.edge()
+              );
+            },
+          };
+        $id.innerHTML = `
+            <ul>
+               <li>User agent ${ua}</li>
+               <li>Plataforma: ${
+                 isMobile.any() ? isMobile.any() : isDesktop.any()
+               }</li>
+               <li>Navegador: ${isBrowser.any()}</li>
+            </ul>
+          `;
+
+        //window.location.href      redirijir
+      }
+      userDeviceInfo("userDevice");
+    </script>
+  </body>
+</html>
